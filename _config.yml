@@ -1,34 +1,22 @@
 title: "Eli Kishinevsky"
 description: "Supply Chain & Business Analytics | Entrepreneur"
 url: "https://elikishinevsky.github.io"
-baseurl: ""                       # keep empty for a user site
+baseurl: ""
 repository: ekishinevsky/elikishinevsky.github.io
 
-# ✅ Load the theme correctly
+# Theme
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "air"      # try: default, neon, dark, air
+minimal_mistakes_skin: "air"
 
-# ✅ Required plugins for remote themes on GitHub Pages
+# Plugins allowed on GitHub Pages
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 
-# (optional) top nav – works once you add the pages
-navigation:
-  - title: "About"
-    url: /about/
-  - title: "Projects"
-    url: /projects/
-  - title: "Experience"
-    url: /experience/
-  - title: "Resume"
-    url: /resume/
-  - title: "Contact"
-    url: /contact/
-
+# Author card
 author:
   name: "Eli Kishinevsky"
-  avatar: "/assets/images/headshot.jpg"   # add later if you have one
+  avatar: "/assets/images/headshot.jpg"   # optional, add later
   bio: "I build communities (Happy Mile Run Club), media (Combatrium), and tools (ClubKit)."
   links:
     - label: "LinkedIn"
@@ -37,8 +25,3 @@ author:
     - label: "Email"
       icon: "fas fa-envelope"
       url: "mailto:YOUR-EMAIL"
-
-    excerpt: "Modern club websites & member hubs: events, signups, analytics."
-    url: "/projects/#clubkit"
-    btn_label: "See details"
-    btn_class: "btn--primary"
