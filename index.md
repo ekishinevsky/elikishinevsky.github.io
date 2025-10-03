@@ -1,17 +1,17 @@
 ---
-layout: default
-title: "Eli Kishinevsky"
+layout: home
+author_profile: true
+title: " "
+excerpt: "Portfolio & Projects"
 ---
 
-# 👋 Hi, I’m Eli
+{% include feature_row id="featured" %}
 
-I’m a Business Analytics & Supply Chain student passionate about global operations, startups, and community building.  
+## Recent Work
 
-## 🚀 Projects
-- **Happy Mile Run Club** — 3,000+ members across branches  
-- **Combatrium** — 71K+ followers in under a year  
-- **ClubKit** — SaaS platform for college & social clubs  
+- **Happy Mile Run Club** — 3,000+ members across branches; weekly ops, partnerships, and merch.
+- **Combatrium** — Built a combat sports media brand to 71K+ followers in ~10 months; partnerships with athletes/brands.
+- **ClubKit** — SaaS for college & social clubs: instant sites, events, members, analytics.
 
-## 📬 Contact
-- [LinkedIn](https://linkedin.com/in/elikishinevsky)  
-- [Email](mailto:ekishinevsky@sandiego.edu)
+## What I’m into
+Supply chain & ops, quant thinking, community-led growth, and shipping simple products that work.
