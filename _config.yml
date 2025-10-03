@@ -1,18 +1,22 @@
 title: "Eli Kishinevsky"
-description: "Supply Chain & Business Analytics"
+description: "Supply Chain & Business Analytics | Entrepreneur"
 url: "https://elikishinevsky.github.io"
-baseurl: ""  # leave blank for user site
+baseurl: ""                       # keep empty for a user site
+repository: ekishinevsky/elikishinevsky.github.io
 
-# Use Minimal Mistakes (remote theme works on GitHub Pages)
-remote_theme: "mmistakes/minimal-mistakes"
+# ✅ Load the theme correctly
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air"      # try: default, neon, dark, air
 
+# ✅ Required plugins for remote themes on GitHub Pages
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
 
-# Navigation (top menu)
+# (optional) top nav – works once you add the pages
 navigation:
   - title: "About"
     url: /about/
@@ -25,45 +29,18 @@ navigation:
   - title: "Contact"
     url: /contact/
 
-# Author card on homepage
 author:
   name: "Eli Kishinevsky"
-  avatar: "/assets/images/headshot.jpg"   # add this image later
-  bio: "Business Analytics & Supply Chain student. I build communities (Happy Mile Run Club), products (ClubKit), and brands (Combatrium)."
+  avatar: "/assets/images/headshot.jpg"   # add later if you have one
+  bio: "I build communities (Happy Mile Run Club), media (Combatrium), and tools (ClubKit)."
   links:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/ekishinevsky"
+      url: "https://linkedin.com/in/YOUR-LINK"
     - label: "Email"
       icon: "fas fa-envelope"
-      url: "mailto:Ekishinevsky@sandiego.edu"
+      url: "mailto:YOUR-EMAIL"
 
-# Social (optional, for SEO cards)
-social:
-  name: "Eli Kishinevsky"
-  links:
-    - "https://linkedin.com/in/ekishinevsky"
-
-# Theme settings
-minimal_mistakes_skin: "default"  # try "air", "dark", "neon" later
-feature_row:
-  - image_path: /assets/images/runclub.jpg
-    alt: "Happy Mile Run Club"
-    title: "Happy Mile Run Club"
-    excerpt: "Scaled a community to 3,000+ members; logistics, brand deals, weekly events."
-    url: "/projects/#happy-mile-run-club"
-    btn_label: "See details"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/combatrium.jpg
-    alt: "Combatrium"
-    title: "Combatrium"
-    excerpt: "71K+ followers in ~10 months. Content ops, partnerships, analytics."
-    url: "/projects/#combatrium"
-    btn_label: "See details"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/clubkit.jpg
-    alt: "ClubKit"
-    title: "ClubKit"
     excerpt: "Modern club websites & member hubs: events, signups, analytics."
     url: "/projects/#clubkit"
     btn_label: "See details"
