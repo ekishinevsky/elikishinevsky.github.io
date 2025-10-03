@@ -12,9 +12,6 @@ minimal_mistakes_skin: "air"      # try: default, neon, dark, air
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
 
 # (optional) top nav – works once you add the pages
 navigation:
