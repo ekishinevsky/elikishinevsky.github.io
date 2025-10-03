@@ -4,19 +4,16 @@ url: "https://elikishinevsky.github.io"
 baseurl: ""
 repository: ekishinevsky/elikishinevsky.github.io
 
-# Theme
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "air"
+minimal_mistakes_skin: "air"   # try "neon" or "dark" if you want more punch
 
-# Plugins allowed on GitHub Pages
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 
-# Author card
 author:
   name: "Eli Kishinevsky"
-  avatar: "/assets/images/headshot.jpg"   # optional, add later
+  avatar: "/assets/images/headshot.jpg"   # optional
   bio: "I build communities (Happy Mile Run Club), media (Combatrium), and tools (ClubKit)."
   links:
     - label: "LinkedIn"
