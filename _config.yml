@@ -46,3 +46,25 @@ social:
 
 # Theme settings
 minimal_mistakes_skin: "default"  # try "air", "dark", "neon" later
+feature_row:
+  - image_path: /assets/images/runclub.jpg
+    alt: "Happy Mile Run Club"
+    title: "Happy Mile Run Club"
+    excerpt: "Scaled a community to 3,000+ members; logistics, brand deals, weekly events."
+    url: "/projects/#happy-mile-run-club"
+    btn_label: "See details"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/combatrium.jpg
+    alt: "Combatrium"
+    title: "Combatrium"
+    excerpt: "71K+ followers in ~10 months. Content ops, partnerships, analytics."
+    url: "/projects/#combatrium"
+    btn_label: "See details"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/clubkit.jpg
+    alt: "ClubKit"
+    title: "ClubKit"
+    excerpt: "Modern club websites & member hubs: events, signups, analytics."
+    url: "/projects/#clubkit"
+    btn_label: "See details"
+    btn_class: "btn--primary"
