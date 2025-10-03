@@ -1,24 +1,31 @@
+# SITE BASICS
 title: "Eli Kishinevsky"
-description: "Supply Chain & Business Analytics | Entrepreneur"
+subtitle: "Supply Chain & Business Analytics | Builder of Happy Mile Run Club, Combatrium, ClubKit"
 url: "https://elikishinevsky.github.io"
-baseurl: ""
+baseurl: ""        # keep empty for user site
 repository: ekishinevsky/elikishinevsky.github.io
 
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "air"   # try "neon" or "dark" if you want more punch
+# THEME
+remote_theme: "daattali/beautiful-jekyll@6.0.1"
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
+# NAVBAR (right side)
+navbar-links:
+  About: "about"
+  Projects: "projects"
+  Experience: "experience"
+  Resume: "assets/resume/Eli_Kishinevsky_Resume.pdf"
+  Contact: "contact"
 
-author:
-  name: "Eli Kishinevsky"
-  avatar: "/assets/images/headshot.jpg"   # optional
-  bio: "I build communities (Happy Mile Run Club), media (Combatrium), and tools (ClubKit)."
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://linkedin.com/in/YOUR-LINK"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:YOUR-EMAIL"
+# SOCIAL + AVATAR
+author: "Eli Kishinevsky"
+avatar: "/assets/img/headshot.jpg"     # upload this file
+social-network-links:
+  email: "YOUR-EMAIL"
+  linkedin: "YOUR-LINKEDIN-HANDLE"     # e.g. elikishinevsky
+
+# APPEARANCE
+navbar-col: "#0f172a"      # dark navy
+navbar-text-col: "#ffffff"
+link-col: "#0ea5e9"        # cyan accent
+footer-col: "#0f172a"
+footer-text-col: "#94a3b8"
