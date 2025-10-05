@@ -30,7 +30,7 @@
       <nav>
         <a href="about.html">About</a>
         <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -60,10 +60,10 @@
           <span class="tag">Community</span><span class="tag">Logistics</span><span class="tag">Partnerships</span><span class="tag">E-commerce</span>
         </article>
 
-        <!-- Combatrium (clickable to PDF PROOF) -->
+        <!-- Combatrium (clickable to the working PDF path) -->
         <article class="card span-6">
           <h3>
-            <a class="project-link" href="assets/docs/combatrium-viral-video.pdf" target="_blank" rel="noopener" title="Open viral video PDF">
+            <a class="project-link" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener" title="Open PDF proof">
               Combatrium
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 3h7v7"></path>
@@ -118,9 +118,11 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const file=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-    document.querySelectorAll('.nav a').forEach(a=>{ if(a.getAttribute('href').toLowerCase()===file) a.classList.add('active'); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('.nav a').forEach(a => {
+      if (a.getAttribute('href').toLowerCase() === file) a.classList.add('active');
+    });
   </script>
 </body>
 </html>
