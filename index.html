@@ -25,8 +25,49 @@
       filter: drop-shadow(0 0 8px rgba(91,140,255,.35));
     }
     /* Make KPI cards act like links */
-    .kpi.kpi-link{ display:block; transition:border-color .15s, transform .06s; }
+    .kpi.kpi-link{ display:block; transition:border-color .15s, transform .06s; cursor: pointer; }
     .kpi.kpi-link:hover{ border-color: var(--accent); transform: translateY(-1px); }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: auto;
+    }
+    .modal.show { display: flex; align-items: center; justify-content: center; }
+    .modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      margin: auto;
+    }
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(91,140,255,.25);
+    }
+    .modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      line-height: 1;
+      transition: opacity .15s;
+    }
+    .modal-close:hover { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -62,11 +103,10 @@
         <div class="kpi"><div class="num">3,000+</div><div class="label">Run club members</div></div>
         <div class="kpi"><div class="num">71K+</div><div class="label">Social followers</div></div>
 
-        <!-- CLICKABLE KPI -> PDF proof of accounts reached -->
-        <!-- If your file is literally named "Proof of Accounts reached.pdf" at repo root, keep the %20 spaces below -->
-        <a class="kpi kpi-link" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener" title="View proof of accounts reached">
+        <!-- CLICKABLE KPI -> Modal popup with proof image -->
+        <div class="kpi kpi-link" onclick="openProofModal()" title="View proof of accounts reached">
           <div class="num">25,000,000+</div><div class="label">Accounts reached (proof)</div>
-        </a>
+        </div>
 
         <!-- CLICKABLE KPI -> Google My Maps -->
         <a class="kpi kpi-link" href="https://www.google.com/maps/d/u/0/edit?mid=1Askrz0HcnfMduiKDwsR0fcMlHAxlr2M&usp=sharing" target="_blank" rel="noopener" title="View my countries map">
@@ -140,11 +180,40 @@
     </div>
   </div>
 
+  <!-- Modal for proof of accounts reached -->
+  <div id="proofModal" class="modal" onclick="closeProofModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProofModal(event)">&times;</button>
+      <img src="proof_of_account_reached.png" alt="Proof of Accounts Reached">
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     document.querySelectorAll('.nav a').forEach(a => {
       if (a.getAttribute('href').toLowerCase() === file) a.classList.add('active');
+    });
+
+    // Modal functions
+    function openProofModal() {
+      document.getElementById('proofModal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProofModal(event) {
+      if (event.target.id === 'proofModal' || event.target.classList.contains('modal-close')) {
+        document.getElementById('proofModal').classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Allow ESC key to close modal
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.getElementById('proofModal').classList.remove('show');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>
