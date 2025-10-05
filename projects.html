@@ -8,18 +8,50 @@
   <meta name="description" content="Community, media, SaaS, and markets projects by Eli Kishinevsky.">
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Accent styling for very-clear clickable project titles -->
+  <!-- Accent styling for very-clear clickable project titles + modal styles -->
   <style>
     .project-link{
       color: var(--accent);
       text-decoration: underline;
       text-decoration-color: rgba(91,140,255,.55);
       text-underline-offset: 3px;
+      cursor: pointer;
     }
     .project-link:hover{ text-decoration-color: currentColor; }
     .project-link .icon{
       width:16px;height:16px;margin-left:6px;vertical-align:text-bottom;opacity:.95;
     }
+
+    /* Modal */
+    .modal-backdrop{
+      position:fixed; inset:0; background:rgba(0,0,0,.6);
+      backdrop-filter: blur(6px) saturate(130%);
+      display:none; z-index:1000;
+    }
+    .modal{
+      position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+      width:min(960px,94vw); height:min(80vh,900px);
+      background:var(--card); border:1px solid var(--border);
+      border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.55);
+      display:flex; flex-direction:column; overflow:hidden;
+    }
+    .modal-header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 14px; border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg,#121217,#0c0c10);
+    }
+    .modal-title{ font-weight:700; font-size:16px }
+    .modal-actions{ display:flex; align-items:center; gap:10px }
+    .modal-body{ flex:1; background:#0b0b0f }
+    .modal-body iframe, .modal-body embed, .modal-body object{
+      width:100%; height:100%; border:0;
+      background:#0b0b0f;
+    }
+    .modal-close{
+      cursor:pointer; border:1px solid var(--border); border-radius:10px;
+      padding:6px 10px; background:#14141a;
+    }
+    .modal-backdrop.show{ display:block; }
   </style>
 </head>
 <body>
@@ -60,10 +92,10 @@
           <span class="tag">Community</span><span class="tag">Logistics</span><span class="tag">Partnerships</span><span class="tag">E-commerce</span>
         </article>
 
-        <!-- Combatrium (clickable to the working PDF path) -->
+        <!-- Combatrium (opens HTML modal with embedded PDF) -->
         <article class="card span-6">
           <h3>
-            <a class="project-link" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener" title="Open PDF proof">
+            <a id="openCombatriumModal" class="project-link" href="#" title="Open viral video proof">
               Combatrium
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 3h7v7"></path>
@@ -105,6 +137,26 @@
     </div>
   </section>
 
+  <!-- MODAL (HTML popup) -->
+  <div id="combatriumModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="combatriumModalTitle">
+      <div class="modal-header">
+        <div id="combatriumModalTitle" class="modal-title">Combatrium — Viral Video (proof)</div>
+        <div class="modal-actions">
+          <a class="btn" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <button class="modal-close" type="button" id="closeCombatriumModal">✕</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <!-- Embed your existing PDF (same one that works on the home KPI). -->
+        <iframe
+          src="Proof%20of%20Accounts%20reached.pdf#view=FitH"
+          title="Combatrium Viral Video Proof PDF"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
@@ -118,10 +170,40 @@
   </div>
 
   <script>
+    // Year + active nav
     document.getElementById('year').textContent = new Date().getFullYear();
     const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
     document.querySelectorAll('.nav a').forEach(a => {
       if (a.getAttribute('href').toLowerCase() === file) a.classList.add('active');
+    });
+
+    // Modal behavior
+    const openBtn = document.getElementById('openCombatriumModal');
+    const backdrop = document.getElementById('combatriumModalBackdrop');
+    const closeBtn = document.getElementById('closeCombatriumModal');
+
+    function openModal(e){
+      e && e.preventDefault();
+      backdrop.classList.add('show');
+      backdrop.setAttribute('aria-hidden','false');
+      // Trap focus to close button
+      closeBtn.focus();
+    }
+    function closeModal(){
+      backdrop.classList.remove('show');
+      backdrop.setAttribute('aria-hidden','true');
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    // Click outside (backdrop) closes
+    backdrop.addEventListener('click', (e) => {
+      if(e.target === backdrop) closeModal();
+    });
+    // ESC closes
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && backdrop.classList.contains('show')) closeModal();
     });
   </script>
 </body>
