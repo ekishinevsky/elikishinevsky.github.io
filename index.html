@@ -107,7 +107,11 @@
         <a class="kpi kpi-link" href="https://www.happymilerc.com/" target="_blank" rel="noopener" title="Visit Happy Mile Run Club">
           <div class="num">3,000+</div><div class="label">Run club members</div>
         </a>
-        <div class="kpi"><div class="num">71K+</div><div class="label">Social followers</div></div>
+        
+        <!-- CLICKABLE KPI -> Modal popup with proof image -->
+        <div class="kpi kpi-link" onclick="openProofModal()" title="View proof of social followers">
+          <div class="num">71K+</div><div class="label">Social followers</div>
+        </div>
 
         <!-- CLICKABLE KPI -> Modal popup with proof image -->
         <div class="kpi kpi-link" onclick="openProofModal()" title="View proof of accounts reached">
@@ -145,7 +149,16 @@
         </article>
 
         <article class="card span-6">
-          <h3>Combatrium</h3>
+          <h3>
+            <span class="project-link" onclick="openProofModal()" style="cursor: pointer;" title="View proof of viral reach">
+              Combatrium
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 3h7v7"></path>
+                <path d="M10 14L21 3"></path>
+                <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
+              </svg>
+            </span>
+          </h3>
           <p>Grew a combat sports media brand to 71K+ followers in &lt; 1 year; global athlete/brand partnerships.</p>
           <span class="tag">Social Media</span><span class="tag">Negotiation</span><span class="tag">Marketing</span><span class="tag">Ops</span>
         </article>
