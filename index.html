@@ -8,7 +8,7 @@
   <meta name="description" content="Eli Kishinevsky is a Supply Chain Management student at the University of San Diego, passionate about global operations, technology, and entrepreneurship.">
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Extra styles for clickable project links + KPI link -->
+  <!-- Extra styles for clickable project links + KPI links -->
   <style>
     .project-link{
       color: var(--accent);
@@ -24,7 +24,7 @@
       width:18px;height:18px;margin-left:8px;vertical-align:text-bottom;
       filter: drop-shadow(0 0 8px rgba(91,140,255,.35));
     }
-    /* Make the Countries KPI act like a clear link */
+    /* Make KPI cards act like links */
     .kpi.kpi-link{ display:block; transition:border-color .15s, transform .06s; }
     .kpi.kpi-link:hover{ border-color: var(--accent); transform: translateY(-1px); }
   </style>
@@ -61,7 +61,13 @@
       <div class="kpis">
         <div class="kpi"><div class="num">3,000+</div><div class="label">Run club members</div></div>
         <div class="kpi"><div class="num">71K+</div><div class="label">Social followers</div></div>
-        <div class="kpi"><div class="num">25,000,000+</div><div class="label">Accounts reached</div></div>
+
+        <!-- CLICKABLE KPI -> PDF proof of accounts reached -->
+        <!-- If your file is literally named "Proof of Accounts reached.pdf" at repo root, keep the %20 spaces below -->
+        <a class="kpi kpi-link" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener" title="View proof of accounts reached">
+          <div class="num">25,000,000+</div><div class="label">Accounts reached (proof)</div>
+        </a>
+
         <!-- CLICKABLE KPI -> Google My Maps -->
         <a class="kpi kpi-link" href="https://www.google.com/maps/d/u/0/edit?mid=1Askrz0HcnfMduiKDwsR0fcMlHAxlr2M&usp=sharing" target="_blank" rel="noopener" title="View my countries map">
           <div class="num">20+</div><div class="label">Countries visited</div>
