@@ -4,9 +4,28 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark" />
-  <title>Home — Eli Kishinevsky</title>
+  <title>Eli Kishinevsky — Supply Chain & Business Analytics</title>
   <meta name="description" content="Eli Kishinevsky is a Supply Chain Management student at the University of San Diego, passionate about global operations, technology, and entrepreneurship.">
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Accent styling for clickable project links -->
+  <style>
+    .project-link{
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(91,140,255,.55);
+      text-underline-offset: 3px;
+    }
+    .project-link:hover{ text-decoration-color: currentColor; }
+    .project-link .icon{
+      width:16px;height:16px;margin-left:6px;vertical-align:text-bottom;opacity:.95;
+    }
+    /* If you add logos later, give the anchor class "with-logo" and include <img class="logo"> */
+    .project-link.with-logo .logo{
+      width:18px;height:18px;margin-left:8px;vertical-align:text-bottom;
+      filter: drop-shadow(0 0 8px rgba(91,140,255,.35));
+    }
+  </style>
 </head>
 <body>
   <!-- NAV -->
@@ -27,7 +46,10 @@
   <section class="hero">
     <div class="container">
       <span class="badge">Supply Chain & Business Analytics Student at the University of San Diego</span>
-      <h1>Hi, I’m <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">Eli</span> — <strong>Supply Chain & Business Analytics Student</strong> focused on <strong>Global operations, Consulting, Procurement, Analytics, Entrepreneurship, import/export</strong>.</h1>
+
+      <!-- SIMPLIFIED MAIN SENTENCE -->
+      <h1>Supply Chain and Business Analytics student at the University of San Diego.</h1>
+
       <p>“From supply chains to startups, I bring strategy, data, and execution together to make things happen.”</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn primary" href="resume.html">View Resume</a>
@@ -50,20 +72,42 @@
       <p class="muted">A snapshot of recent work across community, media, SaaS, and markets.</p>
       <div class="grid cards">
         <article class="card span-6">
-          <h3><a href="https://www.happymilerc.com/" target="_blank" rel="noopener">Happy Mile Run Club</a></h3>
+          <h3>
+            <a class="project-link" href="https://www.happymilerc.com/" target="_blank" rel="noopener">
+              Happy Mile Run Club
+              <!-- external link icon -->
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 3h7v7"></path>
+                <path d="M10 14L21 3"></path>
+                <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
+              </svg>
+            </a>
+          </h3>
           <p>Built a 3,000+ member running community; managed logistics, partnerships, and merchandise.</p>
           <span class="tag">Community</span><span class="tag">Logistics</span><span class="tag">Partnerships</span><span class="tag">E-commerce</span>
         </article>
+
         <article class="card span-6">
           <h3>Combatrium</h3>
-          <p>Grew a combat sports media brand to 71K+ followers in under a year; global athlete/brand partnerships.</p>
+          <p>Grew a combat sports media brand to 71K+ followers in &lt; 1 year; global athlete/brand partnerships.</p>
           <span class="tag">Social Media</span><span class="tag">Negotiation</span><span class="tag">Marketing</span><span class="tag">Ops</span>
         </article>
+
         <article class="card span-6">
-          <h3><a href="https://www.joinclubkit.com" target="_blank" rel="noopener">ClubPack (SaaS)</a></h3>
+          <h3>
+            <a class="project-link" href="https://www.joinclubkit.com" target="_blank" rel="noopener">
+              ClubPack (SaaS)
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 3h7v7"></path>
+                <path d="M10 14L21 3"></path>
+                <path d="M21 14v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
+              </svg>
+            </a>
+          </h3>
           <p>Co-built a platform for clubs to manage members & online presence; streamlined onboarding and content.</p>
           <span class="tag">SaaS</span><span class="tag">SQL</span><span class="tag">Web</span><span class="tag">Product</span>
         </article>
+
         <article class="card span-6">
           <h3>Independent Trading</h3>
           <p>Developed futures/crypto strategies and risk frameworks using data-driven experimentation.</p>
@@ -86,9 +130,11 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const file=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-    document.querySelectorAll('.nav a').forEach(a=>{ if(a.getAttribute('href').toLowerCase()===file) a.classList.add('active'); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('.nav a').forEach(a => {
+      if (a.getAttribute('href').toLowerCase() === file) a.classList.add('active');
+    });
   </script>
 </body>
 </html>
