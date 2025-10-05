@@ -8,7 +8,7 @@
   <meta name="description" content="Eli Kishinevsky is a Supply Chain Management student at the University of San Diego, passionate about global operations, technology, and entrepreneurship.">
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Accent styling for clickable project links -->
+  <!-- Extra styles for clickable project links + KPI link -->
   <style>
     .project-link{
       color: var(--accent);
@@ -20,11 +20,13 @@
     .project-link .icon{
       width:16px;height:16px;margin-left:6px;vertical-align:text-bottom;opacity:.95;
     }
-    /* If you add logos later, give the anchor class "with-logo" and include <img class="logo"> */
     .project-link.with-logo .logo{
       width:18px;height:18px;margin-left:8px;vertical-align:text-bottom;
       filter: drop-shadow(0 0 8px rgba(91,140,255,.35));
     }
+    /* Make the Countries KPI act like a clear link */
+    .kpi.kpi-link{ display:block; transition:border-color .15s, transform .06s; }
+    .kpi.kpi-link:hover{ border-color: var(--accent); transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -60,7 +62,10 @@
         <div class="kpi"><div class="num">3,000+</div><div class="label">Run club members</div></div>
         <div class="kpi"><div class="num">71K+</div><div class="label">Social followers</div></div>
         <div class="kpi"><div class="num">25,000,000+</div><div class="label">Accounts reached</div></div>
-        <div class="kpi"><div class="num">25+</div><div class="label">Countries visited</div></div>
+        <!-- CLICKABLE KPI -> Google My Maps -->
+        <a class="kpi kpi-link" href="https://www.google.com/maps/d/u/0/edit?mid=1Askrz0HcnfMduiKDwsR0fcMlHAxlr2M&usp=sharing" target="_blank" rel="noopener" title="View my countries map">
+          <div class="num">20+</div><div class="label">Countries visited</div>
+        </a>
       </div>
     </div>
   </section>
