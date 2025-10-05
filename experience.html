@@ -8,25 +8,35 @@
   <meta name="description" content="Experience across community building, construction operations, media, trading, and business development.">
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Bullet overlap FIX (safe override) -->
+  <!-- FIX: prevent blue timeline dots from overlapping headings -->
   <style>
-    /* Give the timeline a touch more left space so nothing collides */
-    .timeline{ padding-left: 28px; }
-    /* Remove native bullets and draw our own, indented properly */
-    .timeline .list{ list-style: none; margin: 8px 0 0; padding: 0; }
+    /* More room on the left for the timeline markers */
+    .timeline{ position:relative; padding-left:56px !important; }
+
+    /* Move the vertical line so it stays centered under the dots */
+    .timeline:before{
+      left:28px !important; /* was ~7px in base CSS */
+    }
+
+    /* Position the blue dot so it no longer sits on top of the H3 text */
+    .tl-item:before{
+      left:20px !important;  /* was -1px in base CSS */
+    }
+
+    /* Clean list bullets inside each role */
+    .timeline .list{ list-style:none; margin:8px 0 0; padding:0; }
     .timeline .list li{
-      position: relative;
-      padding-left: 1.25rem;   /* space for our custom bullet */
-      margin: 6px 0;
-      line-height: 1.55;
+      position:relative; padding-left:1.25rem; margin:6px 0; line-height:1.55;
     }
     .timeline .list li::before{
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0.15em;
-      color: var(--muted);
-      font-size: 1.1em;
+      content:"•"; position:absolute; left:0; top:0.15em; color:var(--muted); font-size:1.1em;
+    }
+
+    /* Slightly smaller spacing on very small screens so it still looks tight */
+    @media (max-width:560px){
+      .timeline{ padding-left:46px !important; }
+      .timeline:before{ left:22px !important; }
+      .tl-item:before{ left:16px !important; }
     }
   </style>
 </head>
@@ -48,6 +58,7 @@
     <div class="container">
       <h2>Experience</h2>
       <p class="muted">Impact-first bullets with quant where it matters.</p>
+
       <div class="timeline">
         <div class="tl-item">
           <h3>Co-Founder — Happy Mile Run Club <span class="muted">| San Francisco, CA | 2024–2025</span></h3>
