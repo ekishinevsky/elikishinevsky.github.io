@@ -25,7 +25,19 @@
   <section class="section">
     <div class="container">
       <h2>Resume</h2>
-      <p class="muted">Concise on-page resume. Download the full PDF for details.</p>
+      <p class="muted">Concise on-page resume. Use the buttons to open or download the full PDF.</p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 24px">
+        <!-- Open in new tab -->
+        <a class="btn primary" href="GPAresume.docx.pdf" target="_blank" rel="noopener">
+          View PDF
+        </a>
+        <!-- Force download -->
+        <a class="btn" href="GPAresume.docx.pdf" download>
+          Download PDF
+        </a>
+      </div>
+
       <table class="table">
         <tr><th>Section</th><th>Details</th></tr>
         <tr>
@@ -48,12 +60,24 @@
         <tr>
           <td>Links</td>
           <td>
-            <a href="#" target="_blank" rel="noopener">Download PDF</a> ·
+            <a href="GPAresume.docx.pdf" target="_blank" rel="noopener">Open PDF</a> ·
+            <a href="GPAresume.docx.pdf" download>Download</a> ·
             <a href="https://www.linkedin.com/in/elikishinevsky" target="_blank" rel="noopener">LinkedIn</a> ·
-            <a href="https://ekishinevsky.github.io/elikishinevsky.github.io/" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/ekishinevsky" target="_blank" rel="noopener">GitHub</a>
           </td>
         </tr>
       </table>
+
+      <!-- Optional inline viewer (uncomment to embed the PDF on the page) -->
+      <!--
+      <div style="margin-top:24px;border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <iframe
+          src="GPAresume.docx.pdf#view=FitH"
+          title="Eli Kishinevsky Resume PDF"
+          style="width:100%;height:680px;border:0"
+        ></iframe>
+      </div>
+      -->
     </div>
   </section>
 
