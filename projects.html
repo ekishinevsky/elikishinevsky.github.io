@@ -92,7 +92,7 @@
           <span class="tag">Community</span><span class="tag">Logistics</span><span class="tag">Partnerships</span><span class="tag">E-commerce</span>
         </article>
 
-        <!-- Combatrium (opens HTML modal with embedded PDF) -->
+        <!-- Combatrium (opens HTML modal with embedded PNG) -->
         <article class="card span-6">
           <h3>
             <a id="openCombatriumModal" class="project-link" href="#" title="Open viral video proof">
@@ -143,16 +143,19 @@
       <div class="modal-header">
         <div id="combatriumModalTitle" class="modal-title">Combatrium — Viral Video (proof)</div>
         <div class="modal-actions">
-          <a class="btn" href="Proof%20of%20Accounts%20reached.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <a class="btn" href="proof_of_account_reached.png" target="_blank" rel="noopener">Open in new tab</a>
           <button class="modal-close" type="button" id="closeCombatriumModal">✕</button>
         </div>
       </div>
-      <div class="modal-body">
-        <!-- Embed your existing PDF (same one that works on the home KPI). -->
-        <iframe
-          src="Proof%20of%20Accounts%20reached.pdf#view=FitH"
-          title="Combatrium Viral Video Proof PDF"
-        ></iframe>
+      <div class="modal-body" style="display: flex; align-items: center; justify-content: center; padding: 20px; overflow: auto;">
+        <!-- Display the PNG image with white frame -->
+        <div style="background: white; padding: 4px; border-radius: 12px; max-width: 100%; max-height: 100%;">
+          <img
+            src="proof_of_account_reached.png"
+            alt="Combatrium Viral Video Proof"
+            style="display: block; width: 100%; height: auto; border-radius: 8px;"
+          />
+        </div>
       </div>
     </div>
   </div>
