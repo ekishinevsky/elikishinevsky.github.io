@@ -7,6 +7,28 @@
   <title>Experience — Eli Kishinevsky</title>
   <meta name="description" content="Experience across community building, construction operations, media, trading, and business development.">
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Bullet overlap FIX (safe override) -->
+  <style>
+    /* Give the timeline a touch more left space so nothing collides */
+    .timeline{ padding-left: 28px; }
+    /* Remove native bullets and draw our own, indented properly */
+    .timeline .list{ list-style: none; margin: 8px 0 0; padding: 0; }
+    .timeline .list li{
+      position: relative;
+      padding-left: 1.25rem;   /* space for our custom bullet */
+      margin: 6px 0;
+      line-height: 1.55;
+    }
+    .timeline .list li::before{
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0.15em;
+      color: var(--muted);
+      font-size: 1.1em;
+    }
+  </style>
 </head>
 <body>
   <div class="nav">
@@ -34,6 +56,7 @@
             <li>Secured 20+ brand partnerships; managed merchandise supply chain.</li>
           </ul>
         </div>
+
         <div class="tl-item">
           <h3>Owner — Combatrium <span class="muted">| Remote | 2023–2025</span></h3>
           <ul class="list">
@@ -41,6 +64,7 @@
             <li>Oversaw content pipeline and a small distributed team.</li>
           </ul>
         </div>
+
         <div class="tl-item">
           <h3>Intern — Alex Kushner General Inc. <span class="muted">| California | 2023–2024</span></h3>
           <ul class="list">
@@ -48,18 +72,21 @@
             <li>Instructed crews of 5–10; ensured compliance and safety.</li>
           </ul>
         </div>
+
         <div class="tl-item">
           <h3>Business Development Manager — TrashCan LLC <span class="muted">| 2022–2023</span></h3>
           <ul class="list">
             <li>Managed $5K procurement budget, vendor negotiations, and inventory tracking.</li>
           </ul>
         </div>
+
         <div class="tl-item">
           <h3>Customer Service — Marriott Marquis, SF <span class="muted">| 2025</span></h3>
           <ul class="list">
             <li>Valet and Bell services delivering high-touch guest experience.</li>
           </ul>
         </div>
+
         <div class="tl-item">
           <h3>Independent Trader <span class="muted">| 2024–Present</span></h3>
           <ul class="list">
@@ -93,9 +120,11 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const file=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-    document.querySelectorAll('.nav a').forEach(a=>{ if(a.getAttribute('href').toLowerCase()===file) a.classList.add('active'); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('.nav a').forEach(a => {
+      if (a.getAttribute('href').toLowerCase() === file) a.classList.add('active');
+    });
   </script>
 </body>
 </html>
